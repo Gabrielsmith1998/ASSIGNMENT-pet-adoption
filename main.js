@@ -210,3 +210,46 @@ const pets = [
       imageUrl: "http://lsae2.iypcdn.com/static//modules/uploads/photos/language1/dino-live-22.jpg?119"
     }
   ];
+
+  const bodyElement = document.querySelector('body');
+  const divElement = document.querySelector('#pets');
+  const dogs = document.querySelector('#dogs')
+  const cats = document.querySelector('#cats')
+
+//   pets.forEach((pets)  => {
+//     divElement.innerHTML += `<h1>${pets.name}</h1>`;
+// })
+
+const renderToDom = (divId, textToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = textToRender;
+}
+
+const printPets = (event) => {
+  let domString = '';
+  pets.forEach((pets) => {
+  domString += `<div class="card" style="width: 18rem;">
+  <img src=${pets.imageUrl} class="card-img-top" alt=${pets.name}>
+  <div class="card-body">
+    <p class="card-text">${pets.name}</p>
+    <p class="card-text">${pets.color}</p>
+    <p class="card-text">${pets.specialSkill}</p>
+    <p class="card-text">${pets.type}</p>
+  </div>
+</div>`;
+    console.log(domString);
+  });
+  if (event.target.id === "dogs") {
+    // pets.filter(pets => pets.type === "dogs" )
+    renderToDom("#pets", domString);
+  }
+  if (event.target.id === "dinos" || event.target.id === "cats") {
+    renderToDom('#pets', domString);
+  }
+}
+bodyElement.addEventListener('click', printPets)
+// pets.forEach((memberObj) => {
+//  console.log(memberObj.type);
+// }
+// );
+
