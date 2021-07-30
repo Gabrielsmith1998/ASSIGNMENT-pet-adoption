@@ -1,1 +1,33 @@
 
+.petStyles, .buttonStyles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.card, .btn {
+    margin: 10px;
+    
+}
+
+.card-body {
+    text-align: center;
+}
+
+.pet-type {
+    background-color: gray;
+}
+
+.dog-pet-type {
+    background-color: grey;
+}
+
+.cat-pet-type {
+    background-color: green;
+    
+}
+
+.dino-pet-type {
+    background-color: red;
+}
